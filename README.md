@@ -1,70 +1,115 @@
-cat > README.md <<'EOF'
-# Weather App
+# 🌤️ Weather App
 
-A modern Flutter Weather App that provides current weather information for searched cities and the user's current location.
+A modern and responsive Flutter Weather App that displays current weather information for searched cities and the user's current location.
 
-The app is built with Flutter and uses Open-Meteo for weather data and Nominatim for reverse geocoding.
+The application is built using Flutter and Dart with Provider for state management and public weather/location APIs.
 
-## Features
+## ✨ Features
 
-- Splash screen with smooth transition
-- Current weather information
-- Temperature and weather condition
-- Weather condition icon
-- Humidity
-- Wind speed
-- Feels-like temperature
-- Atmospheric pressure
-- City search with location selection
-- Current GPS location support
-- Pull-to-refresh
-- Manual weather refresh
-- Loading states
-- Error handling
-- Invalid city handling
-- Internet/API failure handling
-- Previous successful weather data remains visible if refresh fails
-- Responsive modern Material 3 UI
-- Clean separation of UI, state management, services, repository, and models
+- 🚀 Splash screen before the main application
+- 🌡️ Current temperature
+- ☁️ Weather condition and weather icon
+- 💧 Humidity
+- 💨 Wind speed
+- 🌡️ Feels-like temperature
+- 📊 Atmospheric pressure
+- 🔎 City search
+- 📍 Current location weather using GPS
+- 🔄 Pull-to-refresh
+- 🔁 Manual refresh button
+- ⏳ Loading states
+- ⚠️ Error states
+- 🌐 Network/timeout error handling
+- 🚫 Invalid city handling
+- 🔒 Location permission handling
+- ♻️ Previous successful weather data remains visible if a refresh fails
+- 📱 Responsive Material 3 UI
+- 🏗️ Layered project architecture
+- 🧩 Provider-based state management
 
-## Tech Stack
+---
 
-- Flutter
-- Dart
-- Provider
-- HTTP
-- Geolocator
-- Shared Preferences
-- Open-Meteo Weather API
-- Open-Meteo Geocoding API
-- Nominatim Reverse Geocoding API
+## 🛠️ Tech Stack
 
-## API
+- **Flutter**
+- **Dart**
+- **Provider** – State management
+- **HTTP** – API requests
+- **Geolocator** – Current device/browser location
+- **Shared Preferences** – Local storage dependency
+- **Open-Meteo Weather API**
+- **Open-Meteo Geocoding API**
+- **Nominatim Reverse Geocoding API**
 
-### Weather API
+---
 
-Open-Meteo is used to retrieve current weather information.
+## 🌐 APIs Used
 
-Weather data includes:
+### Open-Meteo Weather API
+
+The Open-Meteo API is used to retrieve current weather information based on latitude and longitude.
+
+The application uses:
 
 - Temperature
 - Apparent temperature
-- Humidity
-- Wind speed
-- Surface pressure
+- Relative humidity
 - Weather code
+- Surface pressure
+- Wind speed
 
-### City Search
+No API key is required.
 
-Open-Meteo Geocoding API is used to search and select cities.
+### Open-Meteo Geocoding API
 
-### Current Location
+Used for searching cities and obtaining their geographic coordinates.
 
-The Geolocator package is used to obtain the user's GPS coordinates.
+### Nominatim Reverse Geocoding
 
-Nominatim is then used to convert the coordinates into a readable city and country name.
+Used to convert the user's GPS coordinates into a readable city and country name.
 
-## Architecture
+---
+
+## 📍 Current Location Feature
+
+The application supports weather based on the user's current location.
+
+Flow:
+
+1. User taps the current-location button.
+2. The application requests location permission.
+3. GPS coordinates are obtained.
+4. Coordinates are converted into a city and country.
+5. Weather data is requested for those coordinates.
+6. The current weather is displayed.
+
+If location permission is denied, an appropriate error message is displayed.
+
+---
+
+## 🔄 Refresh & Error Handling
+
+The application supports both:
+
+- Pull-to-refresh
+- Manual refresh button
+
+The application handles:
+
+- Invalid city searches
+- Network failures
+- Request timeouts
+- Weather API errors
+- API rate limits
+- Location permission errors
+
+### Previous Data Preservation
+
+If weather data has already loaded successfully and a refresh request fails, the previous successful weather data remains visible instead of replacing the screen with an empty error state.
+
+---
+
+## 🏗️ Project Architecture
 
 The project follows a layered structure to keep responsibilities separated.
 
