@@ -29,6 +29,7 @@ The application is built using Flutter and Dart with Provider for state manageme
 
 ---
 
+
 ## 🛠️ Tech Stack
 
 - **Flutter**
@@ -142,3 +143,11 @@ lib/
 │   └── widgets/
 │
 └── main.dart
+
+
+
+🎥 Demo Video
+
+A short video demonstrating the Weather App features, UI, architecture, city search, current location, refresh, and error handling.
+
+"▶️ Watch Weather App Demo Video" (https://drive.google.com/drive/folders/1GilXJnxn7XOE3SA8QWczqRTLXTgeOAQ_)
